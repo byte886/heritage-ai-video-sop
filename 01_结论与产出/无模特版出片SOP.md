@@ -14,7 +14,7 @@
 
 - [ ] 首帧图就绪：`01_结论与产出/方案效果图/方案3-LOVE扣环点缀款.png`（或客户确认的新图）
 - [ ] 首帧图质量达标：对焦清晰、蓝宝石台面有光、金属不过曝、背景干净
-- [ ] 账号已登录：即梦（jimeng.jianying.com）或豆包APP，确认积分 ≥ 200（10s≈140积分，留出重抽余量）
+- [ ] 账号已登录：即梦（jimeng.jianying.com）或豆包APP，确认积分 ≥ 200（10s≈140积分【已查证：极目新闻实测，见主SOP 1.4】，留出重抽余量）
 - [ ] 收尾 Logo 素材已备：店铺名/Logo 图或文字（剪映收尾用）
 
 ## 3. 操作步骤
@@ -28,22 +28,22 @@
 用主 SOP 1.3 的产品适配示例（已写好，直接复制）：
 ```
 Cinematic macro shot, a gold necklace with a royal blue sapphire set above a LOVE-shaped clasp,
-slowly rotating on a pale cream reflective surface. Visible rainbow fire and spectral dispersion
-through the sapphire, crisp highlights on polished gold links. Warm beige gradient background,
+slowly rotating on a pale cream reflective surface. Rich royal-blue saturation and bright specular
+highlights from the sapphire, crisp highlights on polished gold links. Warm beige gradient background,
 soft haze, shallow depth of field, creamy bokeh, gentle camera push-in, Tiffany commercial
 aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 ```
 - 提示：**运镜面板与提示词二选一**，用了运镜面板就别在提示词里再写"slowly rotating"，否则模型冲突
 - 预期结果：生成参数显示 Seedance 2.0 Fast / 10s / 9:16（或 480p/720p）
-- 常见错误：选了 2.5 模型 → 积分贵近 2 倍，10 秒静物片用 2.0 Fast 就够（选型依据见主 SOP 1.4）
+- 常见错误：选了 2.5 模型 → 积分贵近 2 倍【已查证】，10 秒静物片用 2.0 Fast 就够（选型依据见主 SOP 1.4）
 
 ### 步骤3：抽卡筛选（人工点，不可省）
 一次生成 3-5 条，逐条暂停检查：
 - 旋转是否匀速、无穿模/悬浮
-- 蓝宝石火彩是否持续出现（不是一闪而过或泛白）
+- 蓝宝石高光/台面反光是否持续出现（不是一闪而过或泛白）
 - 扣环/链节是否变形
-- 预期结果：挑出 1 条运镜最自然、火彩最持续的
-- 常见错误：第一条看着还行就定 → 抽卡不筛选是行业公认返工源头，多花 2 分钟多抽一轮
+- 预期结果：挑出 1 条运镜最自然、高光闪烁最持续的
+- 常见错误：第一条看着还行就定 → 抽卡不筛选是行业公认返工源头【已查证：主SOP 〇·五条核心原则第2条】，多花 2 分钟多抽一轮
 
 ### 步骤4：剪映成片（人工点）
 导入选中视频 → 裁剪到 8-10s → 加收尾：Logo/Slogan 全屏海报淡出（博主增量）→ BGM（可选）→ 自动字幕（珠宝片可不开，避免遮挡产品）。
@@ -57,13 +57,13 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 
 ## 4. 验证（产品微距 5 要素 + 动态自检）
 
-- [ ] 蓝宝石切面有彩虹色散（不是泛白反光）
+- [ ] 蓝宝石颜色浓郁不发灰，台面反光明亮闪烁（不以彩虹色散为验收项）
 - [ ] 金属金色质感，不发黄、不发蓝、不是塑料感
 - [ ] 镶爪/LOVE 扣环细节清晰无变形
 - [ ] 背景暖米渐变，不死白不死黑
 - [ ] 台面有倒影，焦点锐利、景深虚化自然
 - [ ] 旋转匀速不抖动、无穿模/悬浮
-- [ ] 宝石火彩在旋转中持续出现
+- [ ] 宝石高光在旋转中持续出现
 
 任一不达标 → 回到步骤2/3重抽，不进入下一步。
 
@@ -77,9 +77,9 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 
 - **不要文生视频**：有实物/方案图时必须图生视频，保真优先（AGENTS 禁止事项）
 - **不生成真人人脸**：本 SOP 无模特版不受影响；模特版走锁骨+侧脸（见模特版 SOP）
-- 积分纪律：480p 抽卡定调 → 720p 出片；30s 视频 1080p 积分约 7 倍差价
+- 积分纪律：480p 抽卡定调 → 720p 出片；30s 视频 1080p 积分约 7 倍差价【已查证：主SOP 3.3 避坑，头条博主实测】
 - 一条视频别硬拉 15s：动作/转场多就拆成两段 5-10s 生成，剪映拼接
-- 门店高频出片建议备付费档：免费额度连续出片会触发次数用完
+- 门店高频出片建议备付费档：免费额度连续出片会触发次数用完【已查证：主SOP 5.3 手机端避坑③，豆包专业版说明】
 
 ## 7. 相关文档
 
