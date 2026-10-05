@@ -1,0 +1,8 @@
+# 忽略规则
+.DS_Store
+*.enc.bak
+.secrets/
+data/
+results/
+__pycache__/
+*.pyc
