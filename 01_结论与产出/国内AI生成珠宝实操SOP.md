@@ -12,6 +12,18 @@
 
 ---
 
+## 目录
+- [〇、全局速览（30秒读完）](#〇全局速览30秒读完)
+- [一、无模特版 SOP（先做这条）](#一无模特版-sop先做这条)
+- [二、模特版 SOP（第二版）](#二模特版-sop第二版)
+- [三、工具差异化 SOP](#三工具差异化-sop)
+- [四、抖音博主方法论](#四抖音博主方法论)
+- [五、自动化与手机端方案](#五自动化与手机端方案)
+- [六、来源清单（按类）](#六来源清单按类)
+- [七、诚实清单（未经核实 / 缺口）](#七诚实清单未经核实--缺口)
+
+---
+
 ## 〇、全局速览（30秒读完）
 
 **你的已定方案**（沿用第一轮决策）：
@@ -51,8 +63,8 @@
 
 | 秒数 | 镜头 | 内容 | 提示词要点 |
 |---|---|---|---|
-| 0-2s | 钩子 | 项链旋转亮相，蓝宝石火彩一闪 | 旋转+微距推进【知识库】 |
-| 2-6s | 微距细节 | 主石（皇家蓝）/LOVE扣环/圆柱件/末端圆珠，火彩+金属光泽+工艺细节 | macro, spectral dispersion, 金属高光【知识库】 |
+| 0-2s | 钩子 | 项链旋转亮相，蓝宝石高光一闪 | 旋转+微距推进【知识库】 |
+| 2-6s | 微距细节 | 主石（皇家蓝）/LOVE扣环/圆柱件/末端圆珠，高光+金属光泽+工艺细节 | macro, specular highlight, 金属高光【知识库】 |
 | 6-8s | 场景氛围 | 暖米色背景/反光台面，光影流动 | warm cream gradient, reflective surface【知识库】 |
 | 8-10s | 收束帧【增量】 | 品牌/店铺Logo + Slogan全屏海报淡出 | 博主钻戒短片同款收尾【已查证：抖音链接4】 |
 
@@ -74,12 +86,12 @@
 **你的产品适配示例（嵌蓝宝石项链，可直接改）**：
 ```
 Cinematic macro shot, a gold necklace with a royal blue sapphire set above a LOVE-shaped clasp,
-slowly rotating on a pale cream reflective surface. Visible rainbow fire and spectral dispersion
-through the sapphire, crisp highlights on polished gold links. Warm beige gradient background,
+slowly rotating on a pale cream reflective surface. Rich royal-blue saturation and bright specular
+highlights from the sapphire, crisp highlights on polished gold links. Warm beige gradient background,
 soft haze, shallow depth of field, creamy bokeh, gentle camera push-in, Tiffany commercial
 aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 ```
-（基础结构取自知识库10.4升级版Prompt；主体替换为你的项链+蓝宝石+LOVE扣环。）
+（基础结构取自知识库10.4升级版Prompt；主体替换为你的项链+蓝宝石+LOVE扣环。注：蓝宝石以颜色饱和度与高光闪烁为卖点，不追求钻石式彩虹色散。）
 
 **抽象词翻译技巧**【已查证：抖音6步大片博主】：把"高级感/微醺暧昧"这类抽象形容词，翻译成AI可渲染的具体物理词——色彩（琥珀色/暖米色）、光质（柔光/侧光/暗光）、镜头（35mm胶片）、画幅（8k）。这是全文最值得复用的提示词撰写原则之一。
 
@@ -100,7 +112,7 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 ### 1.5 验收
 
 **产品微距5要素**（知识库10.3，不达标重抽）【已查证：知识库第十章】：
-- 宝石切面有彩虹色散（不是泛白反光）；
+- 宝石：皇家蓝颜色浓郁不发灰，台面反光明亮闪烁（蓝宝石色散弱于钻石，不以彩虹色散为验收项）；
 - 金属是冷白金/金色质感，不发黄不发蓝不是塑料银；
 - 镶爪/扣环细节清晰无变形；
 - 背景暖米渐变，不死白不死黑；
@@ -108,7 +120,7 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 
 **无模特视频动态自检**（补充）：
 - 旋转匀速不抖动、没有穿模/悬浮；
-- 宝石火彩在旋转中持续出现（不是一闪而过）。
+- 蓝宝石高光在旋转中持续出现（不是一闪而过）。
 
 ---
 
@@ -171,7 +183,7 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 **功能A：服饰穿戴（项链平铺图→模特穿戴图）**【已查证：页面原文，designkit文章A】：
 1. 拍平铺图：链条自然U形垂坠、吊坠居中、金属不过曝（长按锁焦+拉低曝光）；
 2. 上传 → 模特四要素下拉选：**女/青年/中国人/标准**（做国内年轻女性市场必须选"中国人"，颈部比例不同）→ 点"生成基准模特"；
-3. 选场景（如"生吃咖啡露台""简约居家客厅"）→ 点"生成场景图"→ 一次出4张佩戴图；
+3. 选场景（如"生椰咖啡露台"【原文截图为"生吃"，疑转写误】"简约居家客厅"）→ 点"生成场景图"→ 一次出4张佩戴图；
 4. 不满意保持设定点"AI生成"换一批；吊坠歪→"重新生成"，位置高/低→"编辑模特"。
 - **避坑**（原文8条要点）：链条扭8字→佩戴位置偏；金属过曝→材质感丢失；链条交叉/断裂→重生成或消除笔修复；金银两版必须分两次上传；界面无纯白背景选项，需抠图换白底。
 - 图片比例（截图可见）：1:4 / 1:1 / 9:16。
