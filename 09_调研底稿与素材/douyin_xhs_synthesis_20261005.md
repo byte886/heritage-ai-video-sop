@@ -166,25 +166,31 @@ Skill 分镜广告片关键帧 → 5.0pro 生成关键帧 → 11 张参考图（
 
 ---
 
-## 五、尚未核实/待补项（诚实清单）
+## 五、尚未核实/待补项（诚实清单，2026-10-05 补调研后更新）
 
-1. 苞米AI 积分价格与套餐（官方未公开；博主活动价说法未核实）
-2. Seedance 2.5 国内非会员是否直开（未核实）
+1. ~~苞米AI 积分价格与套餐~~ → **已补充**：博主称"活动几块钱薅几百上千积分"（7649712759688531242/7648981957115645227，一方说法）；功能进一步证实：预设模板免提示词/自由控珠宝大小佩戴位置/详情页/大片视频（7675313360489024768，一方说法）
+2. ~~Seedance 2.5 国内非会员是否直开~~ → **已核实**：即梦会员可直接使用（限时积分 5.4 折），**豆包专业版已上线**（腾讯新闻 2026-08-02）；即梦网页版/App 已上线原生 30s+最长 3 分钟长镜头（beta）+50 多模态参考+R2V 动作控制+局部编辑+4K（即梦官方 jimeng.jianying.com/tools/seedance-2-5；字节 Seed 官方 blog）；第三方定价参考：Seedance 2.5 ≈184 积分/4s、2.0 ≈92 积分/4s（Creaa）
 3. 抖音收藏中 A15/A16/A24/A26/A28 无章节要点，按标题+话题记录（未经核实）
-4. 小红书 7 条珠宝收藏的**图文详情正文**（token 抓取受风控，详见下方附注）——主题已由标题+Google 补调研覆盖
-5. 小红书"A I 一键直出珠宝大片"作者具体工具栈（未核实）
+4. ~~小红书 7 条珠宝收藏的图文详情正文（token 抓取受风控）~~ → **已突破**：v6 方案成功 11/13（5 条珠宝核心全部拿到，见 3.4 节与 xhs_favorites_inventory_20261005.md）；仅 2 条（设计入门/模特图3步）未获
+5. ~~小红书"AI一键直出珠宝大片"作者具体工具栈~~ → **已补充**：作者展示的方法＝通用生图工具"参考灵感图法+两步直出佩戴图"，工具栈未明示（仍标注未核实）
+6. **新增**：GPT-6 Astra 驱动 Blender 建模（小红书 6aa0fe35）→ **已获官方背书**：OpenAI 官方发布（BenchCAD 95.9% 3D 重建）、真实 computer-use 操控 Blender 建模/骨骼/动画、连 Unreal Engine 5（官方页+Modern Creator/Habr 实测）；三种连接方式＝电脑操控/脚本驱动/MCP 协议（华为云）。博主演示（23m44s 建模祖母绿戒指）与官方能力一致，可信度高
 
-## 附注：小红书收藏详情抓取过程记录
+## 附注：小红书收藏详情抓取过程记录（v6 突破后更新）
 
 - 列表抓取成功（28 条，技能 favorites 子命令）
-- 逐条详情抓取遇 xsec_token 风控：裸 ID 直开 300031 拦截；收藏页点击获取 token 成功率低（虚拟滚动回收卡片 + 点击跳 404 sec_ 风控页）
-- 已获 token 的 3 条（67b9/67c8/6771：视频下载神器/FireCrawl/做短视频）详情抓取为空（token 时效/SPA 渲染问题）
-- 结论：小红书详情正文抓取目前不稳定，方法论层面已由两轮 Google 深调研覆盖（珠宝提示词体系/工作流/工具能力）
-- 经验沉淀：xhs 收藏详情抓取需"滚动加载→scrollIntoView+点击同帧完成→token 立即使用"，token 二次访问易失效；技能文档将补充此坑
+- **详情抓取 v6 方案（2026-10-05 实测 11/13 成功）**：①收藏页滚动加载直到目标 `section.note-item[data-note-id]` 出现（每轮 2000px/1.8s，≤12 轮）→ ②同一 evaluate 内 scrollIntoView+点击**可见** a → ③等 URL 含 xsec_token（新 tab 需切换）→ ④**当前页内联提取**（不再 goto 二次访问，token 二次访问会渲染为空）
+- 失败教训：点击隐藏 a 触发 sec_ 风控 404；裸 ID 直开 300031；2 条收藏（6a64b99c 设计入门/6a954a5f 模特图）滚动 22 轮+搜索均未出现（疑虚拟渲染差异），已止损，方法论由 Google 调研覆盖
+- 经验沉淀：已验证方案已补进技能 `multiplatform-media-fetch/references/xiaohongshu.md`（commit 60f32cd）
 
 ## 来源索引（关键）
 
 - 苞米AI 官方：https://bomi-ai.com/zh/
+- 苞米AI 功能/积分（抖音博主）：https://www.iesdouyin.com/share/video/7675313360489024768
+- GPT-6 Astra 官方（BenchCAD 95.9%）：https://openai.com/gpt-6-astra/（页面标题 "GPT-6 Astra: A new generation of intelligence"）
+- GPT-6 Astra×Blender 三种连接方式（华为云）：https://bbs.huaweicloud.com/blogs/489651
+- Seedance 2.5 即梦官方：https://jimeng.jianying.com/tools/seedance-2-5
+- Seedance 2.5 字节 Seed 官方发布：https://seed.bytedance.com/zh/blog/一镜成片-随心参考-seedance-2-5-正式发布
+- Seedance 2.5 即梦会员直用/豆包专业版上线（腾讯新闻）：http://news.qq.com/rain/a/20260802A07GF700
 - 极目新闻（Seedance 2.0 Fast 成本实测）：http://hb.dzwww.com/p/p1dYRDUMQG7.html
 - 经济日报（星璨 效率/成本）：https://www.jingjiribao.cn/static/detail.jsp?id=663085
 - Seedance 提示词公式：https://www.seedance-25.ai/blog/seedance-product-demo-video-guide-2026
