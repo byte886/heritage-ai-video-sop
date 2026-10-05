@@ -53,7 +53,7 @@
 | 苞米AI | ❌ 否：未见官方 API/开放平台【经搜索补充：官网无入口+多关键词零命中+无第三方封装三重交叉】 | — | 未核实（原口径） | 无（仅 UI，自动化只能 RPA） | UI 即可，佩戴图主力 |
 | **美图设计室 OpenClaw** | ⚠️ 部分：Agent/MCP 技能框架（非裸 REST），明示开放商品套图/智能抠图/变清晰【已查证】 | 个人可（个人版/团队版）【已查证】 | 美豆，与 UI 共用余额池；单图约 0.61–0.8 元、电商套图 7 张约 4.3–5.6 元【已查证】 | 中 | ★★ 半自动（套图/抠图脚本化） |
 | Photoroom | ✅ 是：标准 REST + x-api-key + 官方 SDK【已查证】 | 个人可注册，但需美元订阅 + 跨境支付；国内连通性未核实【经搜索补充】 | Basic $0.02/张、$20/月起（1000 张）；Plus $0.10/张、$100/月起【已查证】 | 中（限流 60 张/分，同步为主；webhook 未核实） | ✗ 国内门店不现实 |
-| **LibTV（libtv-skills）** | ⚠️ 部分：开源对话式桥接（4 端点 5 脚本），非细粒度节点 API【已查证：GitHub README】 | 个人注册即可在用户中心生成 Access Key（Bearer 鉴权）；具体模型分 VIP 档【经搜索补充】 | Skill 调用不单独计费，消耗平台积分（基础 VIP 39 元/月沿用底稿口径） | 中高（建会话/上传/发指令/轮询/批量下载全自动；上传/检查/导出人工） | ★★ 批量流水线可选 |
+| **LibTV（libtv-cli 1.1.3 官方 CLI）** | ✅ 官方 CLI（2026-08-31 升级公告，画布/节点级细粒度操作：`node --run` 触发生成、`group --run` 整组批量、`script storyboard` 出分镜）；旧开源 libtv-skills 会话式桥接已停更【已查证：im.liblib.tv 官方原文 + CLI 包核验】 | 个人注册登录（CLI `login web/phone` 同步本地）；模型分 VIP 档【经搜索补充】 | Skill/CLI 调用不单独计费，消耗平台积分（基础 VIP 39 元/月沿用底稿口径） | 中高（建画布/节点/连边/上传/触发生成/分组批量全 CLI；首次结果检查/最终成片人工） | ★★★ 进阶流水线首选（批量） |
 | 剪映 / CapCut | ❌ 基本无官方 API：仅 ChatGPT 插件窄接口（3 端点，文本→视频草稿链接+模板搜索）【已查证：官方 openapi.yaml】 | — | — | 第三方路径：cutsdk（MIT 开源）、capcut-mate（自部署）、vectcut/流光剪辑（商业按量）【已查证+经搜索补充】 | 剪映保持 UI（手机端）；进阶批量可 cutsdk 本地写草稿 |
 
 ---
@@ -136,6 +136,19 @@
 | 批量工作流 | ⚠️ 无内建批量编排 API，靠多会话+change_project 隔离+轮询实现 |
 | 仍必须人工 | 注册登录、首次结果检查与不满意反馈、最终成片把关与导出 |
 
+### 3.9.1 ⚠️ 口径更新（2026-10-06 官方复核——用户质疑驱动）
+
+> 用户对"LibTV 是否有 API、是否通过官方调研"提出复核；主 Agent 当场补查官方渠道，确认底稿原 §3.9 只覆盖了**已被官方停更的旧版会话式 OpenAPI**，遗漏了官方升级后的 **LibTV CLI**。本节为更正记录。
+
+- **官方公告（im.liblib.tv 直接返回原文）**："LibTV Skill 已升级为 LibTV CLI。请删除本地旧版 LibTV Skill，并安装新版 LibTV CLI Skill。**新版 CLI 是后续统一入口，可让 Agent 直接操作 LibTV 项目、画布、节点和生成任务**。"【已查证：https://im.liblib.tv/openapi/session ｜ 2026-08-31 更新】
+- **LibTV CLI 官网**：https://www.liblib.tv/cli ｜ 安装包（1.1.3，已下载解压逐文件核验）：https://liblibai-web-static.liblib.cloud/cli/1.1.3/libtv-cli-skill.zip 【已查证】
+- **CLI 命令集（11 命令，官方 SKILL.md 文档地图）**：`login`（web/phone）、`logout`、`account`（info/list/use）、`workspace`（项目/工作区：create/list/update/use/unuse）、`project`（画布：create/list/update/use/unuse）、`node`（create/list/delete、`--left` 连边、stdin 串联、`--run` 触发生成）、`group`（create/list/use/unuse、`--node` 绑定、`--run` 整组批量执行）、`upload`（上传素材为资源节点）、`image`（shortcut 快捷生图）、`script`（含 storyboard：脚本节点生成分镜图组）、`model`（search + 完整 schema）【已查证：CLI 包 commands/ 目录 11 个命令文件】
+- **画布节点类型 7 类**：text / storyboard / image / video / audio / script / video-clip；模型 schema 含 properties/config/rules/modeType【已查证：CLI 包 node-types/ + model-schema/】
+- **能力升级（相对旧会话式）**：上传资源→建节点→连边（`--left` / 管道串联）→触发生成（`node --run`）→**分组批量（`group --run`，珠宝批量生产直接可用）**→管道 NDJSON 串联（examples/pipes/）；workflow 案例 6 个（create-and-run / update-params / connect-only / group-batch-run / workspace-setup / all-in-one）【已查证：CLI 包 examples/workflow/】
+- **鉴权**：`libtv login web`（网页登录自动同步本地，首次使用推荐）或 `libtv login phone`；官方口径"`libtv --help` 与文档不一致时以 CLI 实际输出为准"【已查证：CLI 包 SKILL.md + commands/login.md】
+- **LiblibAI 星流 API 开放平台（图像侧，同公司另一条产品线）**：liblib.art 提供"以 API 接口形式提供基于模型、工作流的图像生成功能的技术服务"（服务条款 2024-12-03，生成式 AI 备案"片羽图像生成算法"）【已查证：https://www.liblib.art/activities/API-Service-Agreement】——LibTV（视频画布）与星流（图像 REST）为两条线，图像批量生成可另查此通道
+- **底稿原 §3.9 结论修订**：LibTV 程序化能力从"会话式桥接 4 端点"**上调为"官方 CLI 细粒度画布/节点级操作"**；自动化边界同步升级（见 §四更新）；仍必须人工：登录、结果质量检查、最终成片把关。
+
 ### 3.10 剪映 / CapCut
 
 - **A. API 可用性**：基本"否"（官方）。唯一可抓到的官方程序化描述是 **CapCut ChatGPT Plugin**（OpenAPI 3.0，https://www.capcut.com/openapi.yaml ，仅 3 端点：英文文本→视频草稿链接、插件自介绍、模板搜索），**不是通用剪辑开放 API**，不能做素材拼剪/字幕/时间线批量生产【已查证：官方 yaml 精读】。国内剪映（capcut.cn/专业版）未见官方开放平台/开发者控制台；"剪映开放平台申请企业资质拿 client_id/secret、开通 AI 数字人 API"仅见单一 CSDN 博客、无官方门户佐证，**按"未见官方 API"处理**【博主一方说法：CSDN 2026-07-20；经搜索补充：SamAutomation 亦明确 CapCut 无公开服务端 API】。
@@ -154,7 +167,7 @@
 | 白底图/抠图 | 即梦画布节点、人工上传+筛 | ✅ 火山方舟 Seedream API（个人实名、0.22 元/张起）批量生成；Photoroom API 抠图（跨境门槛）；美图 OpenClaw 智能抠图 | 上传原图（每款一次）+ **筛图**（高反光/镶口保真，行业无全自动方案） |
 | 佩戴图（模特上身） | 苞米AI UI（主力）、美图设计室 UI | ⚠️ 美图 OpenClaw 新闻稿含"AI换装"但 designkit 侧是否可调未核实；苞米AI 无 API（只能 RPA） | 筛选佩戴比例/链条变形（人体 4 项自检） |
 | 图生视频（无模特/有模特） | 即梦 App/画布逐条点 | ✅ 火山方舟 Seedance 异步任务+回调+批量并发（10s≈14 元）；✅ 可灵 Webhook（V3 4K 3 积分/秒）；✅ LibTV 会话式批量 | 筛视频（运镜/时长）——抽卡仍人工 |
-| 剧本→分镜→镜头编排 | LibTV 画布 Skill 商店 / 即梦画布 | ⚠️ LibTV 会话式半自动（发大白话，服务端 Agent 跑）；无细粒度节点 API | 首次结果检查、不满意反馈 |
+| 剧本→分镜→镜头编排 | LibTV 画布 Skill 商店 / 即梦画布 | ⚠️ LibTV CLI 已支持画布/节点级脚本化（`node` 建节点+`--run` 触发生成+`script storyboard` 出分镜、`group --run` 整组批量）【已查证：CLI 包核验】；仍无"一句话全自动到成片" | 首次结果检查、不满意反馈 |
 | 剪辑成片（字幕/卡点/BGM） | 剪映 App/桌面 UI | ❌ 官方无 API；第三方 cutsdk 本地写草稿→剪映桌面端微调（开源免费）或 vectcut 云端渲染 | 节奏/对齐/终检导出 |
 | 分发客户 | 微信/企业微信直发 | ❌ 无自动分发链路【未核实：所有工具均未查到自动导出后自动推送】 | 发送/终检 |
 
@@ -178,7 +191,7 @@
 |---|---|---|
 | 阶段 0（现状） | 苞米AI 佩戴图 + 即梦画布/App + 剪映，全 UI | 不引入开发，先把模特版/客户验收跑通 |
 | 阶段 1（第一批 API 化，成本最低收益最大） | ① 火山方舟 Seedream 批量白底图/抠图（免费额度 50–200 张试手，0.22–0.30 元/张）；② 视频批量提交用火山方舟 Seedance 或可灵（Webhook 回调），脚本收结果 | 个人实名即可；脚本量很小；**筛图/筛视频仍人工** |
-| 阶段 2（进阶流水线） | ① LibTV libtv-skills 把"剧本→分镜→镜头"会话式全自动；② 美图 OpenClaw 商品套图/抠图脚本化（美豆与 UI 共用余额池）；③ 剪映批量用 cutsdk 本地写草稿→桌面端微调 | 需一点开发能力；LibTV 模型分档注意 VIP 约束 |
+| 阶段 2（进阶流水线） | ① LibTV **官方 CLI 1.1.3**（建画布/节点/连边/上传→`node --run` 触发生成→`group --run` 整组批量，珠宝批量生产可直接脚本化）；② 美图 OpenClaw 商品套图/抠图脚本化（美豆与 UI 共用余额池）；③ 剪映批量用 cutsdk 本地写草稿→桌面端微调 | 需一点开发能力；LibTV 模型分档注意 VIP 约束 |
 | 不推荐 | 即梦官网自身 API、Photoroom、BytePlus、可灵海外 | 门槛/支付/网络不合国内门店场景 |
 
 ### 5.3 接入成本与门槛排序（低 → 高）
@@ -187,7 +200,7 @@
 |---|---|---|---|
 | 1 | 火山方舟 Seedream/Seedance | 个人实名（扫脸/银行卡） | 免费额度试手，SDK 现成 |
 | 2 | 美图设计室 OpenClaw | 个人账号登录生成 AK | 但为 Agent/MCP 框架非裸 REST |
-| 3 | LibTV libtv-skills | 个人注册取 Access Key；模型分 VIP 档 | 对话式桥接，非细粒度 API |
+| 3 | LibTV libtv-cli 1.1.3 | 个人注册登录（login web/phone）；模型分 VIP 档 | 官方 CLI 画布/节点级（node --run / group --run 批量）｜旧会话式桥接已停更 |
 | 4 | 可灵 Kling（国内） | 个人实名（身份证+人脸） | 资源包"积分兑人民币"价需登录控制台 |
 | 5 | 剪映第三方（cutsdk/vectcut） | 需开发能力（cutsdk 免费开源；vectcut 商业） | 官方无 API |
 | 6 | Photoroom | 个人可注册但需美元+国际卡，国内连通性未验证 | 仅跨境团队考虑 |
@@ -260,8 +273,11 @@
 - 【经搜索补充】metronome 定价索引：https://metronome.com/pricing-index/photoroom-api ；directoryforai：https://directoryforai.com/tool-guides/best-ai-tools-for-background-removal/
 
 ### LibTV / 剪映
-- 【已查证】libtv-skills 开源仓库（README 精读，本次复核：7 commits、1 skill、5 脚本、4 端点）：https://github.com/libtv-labs/libtv-skills
-- 【已查证】官方 CLI 入口：https://www.liblib.tv/zh/cli
+- 【已查证】libtv-skills 开源仓库（README 精读，本次复核：7 commits、1 skill、5 脚本、4 端点，MIT）：https://github.com/libtv-labs/libtv-skills
+- 【已查证】LibTV CLI 官网：https://www.liblib.tv/cli （⚠️ 旧入口 https://www.liblib.tv/zh/cli 已 404）
+- 【已查证】官方升级公告（im.liblib.tv 返回 JSON 原文："LibTV Skill 已升级为 LibTV CLI……新版 CLI 是后续统一入口，可让 Agent 直接操作 LibTV 项目、画布、节点和生成任务"）：https://im.liblib.tv/openapi/session
+- 【已查证】LibTV CLI 安装包 1.1.3（下载解压核验 11 命令/7 节点类型/6 workflow 案例）：https://liblibai-web-static.liblib.cloud/cli/1.1.3/libtv-cli-skill.zip
+- 【已查证】LiblibAI 星流 API 开放平台服务条款（图像侧 REST，备案"片羽图像生成算法"）：https://www.liblib.art/activities/API-Service-Agreement
 - 【经搜索补充】腾讯新闻：http://news.qq.com/rain/a/20260323A05VI100 ；toolin.ai（Skill 商店）：https://toolin.ai/blog/libtv-skill-hub ；UIED：https://www.uied.cn/posts/112442 ；掘金：https://juejin.cn/post/7618167131003846656 ；ClawHub：https://docs.clawhub.ai/qiuxiangxiang/skills/libtv-skill-pro
 - 【博主一方说法】掘金实测（非 VIP 可用模型数）：https://aicoding.juejin.cn/post/7669268061262921791
 - 【已查证】liblib.art 会员价：https://www.liblib.art/membershipInvitationBonus
@@ -289,6 +305,8 @@
 | 美图 OpenClaw 个人可开、美豆与 UI 共用池 | ✅ 已查证（官方页面） |
 | Photoroom API 标准可用但需跨境支付 | ✅ 已查证（官方文档/定价）+ ❌ 国内连通性未核实 |
 | **libtv-skills 开源仓仅 1 个桥接 skill（更正 2026-06 底稿"100+ Skill"口径）；100+ Skill 实为 2026-07-14 上线的画布内 Skill 商店** | ✅ 已查证（GitHub README 本次复核 + 第三方报道） |
+| **LibTV 官方已升级为 CLI 1.1.3（画布/节点级细粒度操作，统一入口）；旧 libtv-skills 会话式已停更** | ✅ 已查证（官方升级公告 im.liblib.tv 原文 + CLI 安装包下载核验 2026-10-06） |
+| **LiblibAI 星流 API 开放平台（图像侧 REST，模型/工作流图像生成）** | ✅ 已查证（官方服务条款 liblib.art/activities/API-Service-Agreement） |
 | 剪映/CapCut 无官方剪辑开放 API，第三方 cutsdk/vectcut 为现实路径 | ✅ 已查证（官方 yaml）+ ⚠️ 剪映开放平台传闻未获官方证实 |
 
 ---
