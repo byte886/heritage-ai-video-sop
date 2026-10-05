@@ -68,10 +68,10 @@
 - **核实路径**：复用抖音收藏遍历技能补录链接后逐条回填（盘点表为只读，回填时走 09 例外或新增补充表）
 
 ### ISSUE-011: Nano Banana 官方名未核实
-- **状态**：open ｜ **发现时间**：2026-10-06 ｜ **来源**：SOP 精炼评估 P4（命名统一）
+- **状态**：resolved ｜ **发现时间**：2026-10-06 ｜ **解决时间**：2026-10-06 ｜ **来源**：SOP 精炼评估 P4 + A 路调研（2026-10-06）
 - **问题描述**：博主称"Nano Banana 2"，官方材料另有"Nano Banana Pro"写法；当前仓库统一书写为"Nano Banana Pro（博主亦称 Nano Banana 2）"
 - **影响**：对外文档引用工具名可能不一致
-- **核实路径**：Google 检索 Google 官方博客确认该模型正式名称
+- **解决**：A 路调研官方模型页三源独立核实（ai.google.dev 模型页 + deepmind.google 模型页 + Firebase 文档，V 路独立复验三源一致）：Nano Banana 家族官方三昵称独立并存——**Nano Banana Pro** = gemini-3-pro-image（Gemini 3 Pro Image）、**Nano Banana 2** = gemini-3.1-flash-image（Gemini 3.1 Flash Image，"2"系官方正式昵称非博主私称）、**Nano Banana 2 Lite** = gemini-3.1-flash-lite-image；原 Imagen 已下线统一入该家族（官方模型页标注"已关闭"）。旧"Pro（博主亦称 2）"书写系混淆作废；仓库统一书写按此表，详见《工具选型参考》§5.3 + A 路底稿 §1.2
 
 ### ISSUE-012: libtv 研究笔记证据档矛盾（评估报项）——复查未复现
 - **状态**：resolved ｜ **发现时间**：2026-10-06 ｜ **解决时间**：2026-10-06 ｜ **来源**：SOP 精炼评估 P4
