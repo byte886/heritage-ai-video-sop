@@ -318,9 +318,9 @@ aesthetic, 10 seconds, 9:16 vertical, soft warm lighting, no text, no people.
 
 ---
 
-*配套研究笔记（更细证据）*：
-- bomi_meitu_research.md（苞米AI+美图设计室）
-- industry_cases_research.md（站酷/星璨/周大生）
-- douyin_bloggers_research.md（抖音博主）
-- libtv_seedance_research.md（LibTV+Seedance版本对比）
-- automation_mobile_research.md（自动化+手机端）
+*配套研究笔记（更细证据，均在 `09_调研底稿与素材/`）*：
+- `09_调研底稿与素材/bomi_meitu_research.md`（苞米AI+美图设计室）
+- `09_调研底稿与素材/industry_cases_research.md`（站酷/星璨/周大生）
+- `09_调研底稿与素材/douyin_bloggers_research.md`（抖音博主）
+- `09_调研底稿与素材/libtv_seedance_research.md`（LibTV+Seedance版本对比）
+- `09_调研底稿与素材/automation_mobile_research.md`（自动化+手机端）
