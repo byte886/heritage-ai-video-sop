@@ -22,6 +22,7 @@
 ## 恢复顺序（冷启动 / 续接 双路径，强制）
 
 **路径 A · 冷启动**（首次接触本项目 / 跨阶段切换 / 对任务归属没把握 / 判不准）：
+0. 属跨体系业务意图（发什么/定方向）→ 先读运营仓 `~/Desktop/self-media-ops/docs/SYSTEM_STRATEGY.md`；运行机制/路由疑问 → 采集底座 `~/Desktop/multiplatform-content-pipeline/docs/SYSTEM_ARCHITECTURE.md`
 1. 读本文件（AGENTS.md）
 2. 读 `00_项目总纲.md`（当前状态）
 3. 读 `03_进行中的任务/TASK_STATUS.md`（到哪/下一步/卡在哪）+ `ISSUES.md`（未核实项/做不通方向）
