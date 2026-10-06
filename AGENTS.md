@@ -66,3 +66,13 @@
 | Q5 决策/历史 | 为什么这样定 | `02_决策记录/ADR-*.md` |
 
 > 用户表达模糊时给 2-3 个选项让用户选，不猜测意图；结论来自文档与现场核查，不凭对话记忆。
+
+## OKF 知识层（采用声明 · okf-wiki v0.2 标准档）
+
+> 本项目知识成品（结论产出/决策记录/SOP）采用 OKF v0.2 标准档 frontmatter（方法见技能 `~/Doubao/skills/okf-wiki`）。**只叠加格式层，不建平行知识库**：index=README+00_项目总纲、log=CHANGELOG.md、schema=本文件；存量不强制回填，**新写文档自然采用**。
+
+- **type 词表（项目统一，不得自造）**：`Conclusion`（结论与产出：`01_结论与产出/`）/ `Decision`（决策记录：`02_决策记录/ADR-*`）/ `SOP`（执行型流程文档）/ `Active`（台账：`03_进行中的任务/`）
+- **标准档字段**：`type` + `title` + `description` + `tags` + `sources`（四档来源链接）+ `generated`（`{by, at}`）+ `status`（stable/draft/deprecated）+ `stale_after`（按需）+ 自定义 key（`version` / `scope` / `gates` 等）
+- **信任标注**：机器初编不写 `verified: human`（不冒充人核）；用户审核后才补
+- **机械校验（提交前必过）**：`python3 ~/Doubao/skills/okf-wiki/scripts/okf_validate.py <目录> --exclude <存量未回填>`——硬错误 E 必须为 0，警告 W 逐条确认；存量文档 E1 属"存量不强制回填"预期，只校验已采用 OKF 的文档
+- **frontmatter 为机器权威**：正文信息块由其派生，二者一致，不两处维护
