@@ -1,6 +1,6 @@
 # domains/jewelry · 珠宝行业实例（鉴藏体系）
 
-> **实例定位**：本目录是 ai-video-studio 的**珠宝行业实例层**（对应鉴藏体系 heritage 总域，子域 01_jewelry / 02_jadeite / 03_antiques）。通用方法论在仓根层（README / 00_项目总纲 / 01_结论与产出），行业专属 SOP、素材、方案记录全部下沉至此，避免通用层被行业限定污染。
+> **实例定位**：本目录是 video-studio 的**珠宝行业实例层**（对应鉴藏体系 heritage 总域，子域 01_jewelry / 02_jadeite / 03_antiques）。通用方法论在仓根层（README / 00_项目总纲 / 01_结论与产出），行业专属 SOP、素材、方案记录全部下沉至此，避免通用层被行业限定污染。
 
 ## 行业覆盖
 

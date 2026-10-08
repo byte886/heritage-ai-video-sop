@@ -1,4 +1,4 @@
-# AI 视频生产全链路（ai-video-studio）
+# AI 视频生产全链路（video-studio）
 
 > 文档类型：Concept（项目介绍）｜ 更新频率：结构变更时 ｜ 维护者：AI+用户 ｜ 读者：人类+AI
 

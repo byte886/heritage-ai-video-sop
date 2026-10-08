@@ -6,6 +6,10 @@
 > 类型：新增（feat）/ 变更（change）/ 修复（fix）/ 废弃（deprecate）/ 移除（remove）。
 > 与 ADR 分工：ADR 记"为什么这么决策"；本文件记"实际发生了什么变更"。
 
+## 2026-10-09
+
+- 2026-10-09 ［变更］仓库改名 `ai-video-studio → video-studio`（体系去 ai 前缀统一：AI 在体系内不言而喻，与 trend-radar / we-media-ops 命名一致；GitHub rename + 本地目录 + remote set-url + 全链指针同步）
+
 ## 2026-10-08
 
 - 2026-10-08 ［变更］仓库改名 `heritage-ai-video-sop → ai-video-studio`（职责升格为"AI 视频生产全链路"：出图/出视频/音频/分镜/导演思维/质量门禁/工具选型，不限于 SOP；GitHub rename + 本地目录 + remote set-url + 全链指针同步）
