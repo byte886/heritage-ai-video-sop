@@ -40,7 +40,7 @@
 
 > **发现层指针**：珠宝营销/珠宝AI 渠道监控、AI工具监控、定时更新机制见独立通用仓 `~/Desktop/ai-intel-monitor`（GitHub: `github.com/byte886/ai-intel-monitor`）——"看什么、去哪看、怎么监控"归那边，"选型与生产结论"留在本仓。
 
-> **总控仓指针**：五仓体系总控与跨仓路由协作规范见总控仓 `~/Desktop/system-architecture/`（GitHub: `github.com/byte886/system-architecture`）——本仓=④生产执行，"怎么做/出片与选型结论"留在本仓，体系级架构与路由以总控仓为准。
+> **总控仓指针**：五仓体系总控与跨仓路由协作规范见总控仓 `~/Desktop/multi-repo-orchestration/`（GitHub: `github.com/byte886/multi-repo-orchestration`）——本仓=④生产执行，"怎么做/出片与选型结论"留在本仓，体系级架构与路由以总控仓为准。
 
 ## 当前主线
 方案3（LOVE扣环点缀款）✅ 效果图定稿（豆包系实测）→ 无模特版视频 ✅ 实测成片（Seedance 2.0 Fast，13s，16:9）→ **设计评估后改款中**（A/B/C 三方案效果图已出，待用户选定）→ 选定后重出定稿图+无模特版视频+模特版视频 → 客户验收。
