@@ -39,9 +39,5 @@ AI 视频生产**全链路通用工作台**：出图 / 出视频 / 音频 / 分�
 | `AGENTS.md` | AI 操作手册（给 AI 看） |
 | `PROFILE.md` | 项目事实层 |
 
-> **发现层指针**：珠宝营销/珠宝AI 渠道监控、AI工具监控、定时更新机制见独立通用仓 `~/Desktop/ai-intel-monitor`（GitHub: `github.com/byte886/ai-intel-monitor`）——"看什么、去哪看、怎么监控"归那边，"选型与生产结论"留在本仓。
-
-> **总控仓指针**：五仓体系总控与跨仓路由协作规范见总控仓 `~/Desktop/multi-repo-orchestration/`（GitHub: `github.com/byte886/multi-repo-orchestration`）——本仓=④生产执行，"怎么做/出片与选型结论"留在本仓，体系级架构与路由以总控仓为准。
-
 ## 当前主线
 通用层：AI 视频生产全链路方法论成型中（出图/出视频/音频/分镜/门禁/工具选型均已沉淀）。实例层：珠宝 domains/jewelry——方案3（LOVE扣环点缀款）✅ 效果图定稿（豆包系实测）→ 无模特版视频 ✅ 实测成片（Seedance 2.0 Fast，13s，16:9）→ **设计评估后改款中**（A/B/C 三方案效果图已出，待用户选定）→ 选定后重出定稿图+无模特版视频+模特版视频 → 客户验收。

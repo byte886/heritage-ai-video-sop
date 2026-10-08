@@ -23,12 +23,11 @@
 ## 恢复顺序（冷启动 / 续接 双路径，强制）
 
 **路径 A · 冷启动**（首次接触本项目 / 跨阶段切换 / 对任务归属没把握 / 判不准）：
-0. 属跨体系业务意图（发什么/定方向）→ 先读运营仓 `~/Desktop/self-media-ops/docs/SYSTEM_STRATEGY.md`；运行机制/路由疑问 → 总控仓 `~/Desktop/multi-repo-orchestration/README.md`（或采集底座薄指针 `~/Desktop/multiplatform-content-pipeline/docs/SYSTEM_ARCHITECTURE.md`）
-1. 读本文件（AGENTS.md）
-2. 读 `00_项目总纲.md`（当前状态）
-3. 读 `03_进行中的任务/TASK_STATUS.md`（到哪/下一步/卡在哪）+ `ISSUES.md`（未核实项/做不通方向）
-4. 需要证据时读 `09_调研底稿与素材/` 对应笔记
-5. 通用方法先读 `01_结论与产出/`（导演思维/音频/工具选型/门禁）；行业执行进 `domains/jewelry/`——出图/出视频前读 `domains/jewelry/国内AI生成珠宝实操SOP.md` 对应章节；执行出片时直接读 `domains/jewelry/无模特版出片SOP.md`
+0. 读本文件（AGENTS.md）
+1. 读 `00_项目总纲.md`（当前状态）
+2. 读 `03_进行中的任务/TASK_STATUS.md`（到哪/下一步/卡在哪）+ `ISSUES.md`（未核实项/做不通方向）
+3. 需要证据时读 `09_调研底稿与素材/` 对应笔记
+4. 通用方法先读 `01_结论与产出/`（导演思维/音频/工具选型/门禁）；行业执行进 `domains/jewelry/`——出图/出视频前读 `domains/jewelry/国内AI生成珠宝实操SOP.md` 对应章节；执行出片时直接读 `domains/jewelry/无模特版出片SOP.md`
 
 **路径 B · 续接**（用户说"继续/接着做 X"，仍是同一阶段同类活）：
 1. 只读本文件（AGENTS.md）扫规则
