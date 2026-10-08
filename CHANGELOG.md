@@ -6,6 +6,13 @@
 > 类型：新增（feat）/ 变更（change）/ 修复（fix）/ 废弃（deprecate）/ 移除（remove）。
 > 与 ADR 分工：ADR 记"为什么这么决策"；本文件记"实际发生了什么变更"。
 
+## 2026-10-08
+
+- 2026-10-08 ［变更］仓库改名 `heritage-ai-video-sop → ai-video-studio`（职责升格为"AI 视频生产全链路"：出图/出视频/音频/分镜/导演思维/质量门禁/工具选型，不限于 SOP；GitHub rename + 本地目录 + remote set-url + 全链指针同步）
+- 2026-10-08 ［变更］通用化结构重构（参照 multiplatform-content-pipeline 的 domains/ 模式）：通用方法论留根层（01_结论与产出/ 五件套：导演思维/音频/工具选型/来源索引/质量门禁 v2.0），行业实例下沉 `domains/jewelry/`（珠宝专属 SOP/方案效果图/素材体系 11 项 + 实例 README 导航）；全链路质量门禁 v2.0 从 03 移入通用层
+- 2026-10-08 ［变更］README / 00_项目总纲 / AGENTS 重写为通用定位（去"鉴藏AI生产执行·项链嵌蓝宝石改款"行业项目标题，项目痕迹移至实例层）；活跃文档旧路径引用同步修正
+- 2026-10-08 ［说明］02 决策记录 / 09 调研底稿保持现状（历史不强制移动）；归位说明见 `domains/jewelry/README.md`
+
 ## 2026-10
 - 2026-10-06 ［变更］仓库改名 jewelry-ai-video-sop → heritage-ai-video-sop（鉴藏体系"箱"级名称统一，GitHub rename + 本地目录 + 跨仓引用同步）；鉴藏体系五仓协同架构落地（意图层=运营仓 SYSTEM_STRATEGY / 驱动层=采集底座 SYSTEM_ARCHITECTURE，产物驱动、任务路由）；多仓编排方法论提炼为技能 multi-repo-orchestration 并推送。
 - 2026-10-06 ［新增］方案A定稿图（单颗5.5mm皇家蓝居中·LOVE刻字修正版）：用户从 A/B/C 三改款方案选定 A，基于方案A效果图 I2I 修正圆环刻字（lovely→LOVE），门禁 G3 通过。

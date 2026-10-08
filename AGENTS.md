@@ -1,11 +1,12 @@
-# AGENTS.md · 鉴藏AI生产执行（AI 操作手册）
+# AGENTS.md · AI 视频生产全链路（AI 操作手册）
 
 > 文档类型：Governance（治理规范）｜ 更新频率：流程/工具/规范变更时 ｜ 维护者：AI 自动维护+用户审核 ｜ 读者：AI 代理
 
 > 给 AI 看的命令式规则。新会话启动先读本文件，再读 README/PROFILE/总纲。
 
 ## 目录约定
-- `01_结论与产出/`：只放最终结论文档与定稿效果图；方案效果图子目录 `01_结论与产出/方案效果图/`；执行型 SOP（8段式）与总 SOP 并列放在此
+- `01_结论与产出/`：通用层最终结论文档（导演思维/音频/工具选型/来源索引/质量门禁 v2.0）
+- `domains/<行业>/`：行业实例层（当前 jewelry/），实例内放该行业专属 SOP、方案效果图、素材体系；实例 README 即导航
 - `02_决策记录/`：ADR 只增不改，过时加"[已退役 日期：原因]"，不硬删；治理卡、评估迭代机制在此
 - `03_进行中的任务/`：TASK_STATUS.md 是进度唯一权威源，任务开始/完成/遇阻立即更新；ISSUES.md 跟踪未核实项与 Won't Fix
 - `09_调研底稿与素材/`：原始素材只读，不修改；新增素材加子目录；SOP 精炼评估产物在 `SOP精炼评估_20261006/` 子目录
@@ -22,12 +23,12 @@
 ## 恢复顺序（冷启动 / 续接 双路径，强制）
 
 **路径 A · 冷启动**（首次接触本项目 / 跨阶段切换 / 对任务归属没把握 / 判不准）：
-0. 属跨体系业务意图（发什么/定方向）→ 先读运营仓 `~/Desktop/self-media-ops/docs/SYSTEM_STRATEGY.md`；运行机制/路由疑问 → 采集底座 `~/Desktop/multiplatform-content-pipeline/docs/SYSTEM_ARCHITECTURE.md`
+0. 属跨体系业务意图（发什么/定方向）→ 先读运营仓 `~/Desktop/self-media-ops/docs/SYSTEM_STRATEGY.md`；运行机制/路由疑问 → 总控仓 `~/Desktop/multi-repo-orchestration/README.md`（或采集底座薄指针 `~/Desktop/multiplatform-content-pipeline/docs/SYSTEM_ARCHITECTURE.md`）
 1. 读本文件（AGENTS.md）
 2. 读 `00_项目总纲.md`（当前状态）
 3. 读 `03_进行中的任务/TASK_STATUS.md`（到哪/下一步/卡在哪）+ `ISSUES.md`（未核实项/做不通方向）
 4. 需要证据时读 `09_调研底稿与素材/` 对应笔记
-5. 出图/出视频前读 `01_结论与产出/国内AI生成珠宝实操SOP.md` 对应章节；执行出片时直接读 `01_结论与产出/无模特版出片SOP.md`
+5. 通用方法先读 `01_结论与产出/`（导演思维/音频/工具选型/门禁）；行业执行进 `domains/jewelry/`——出图/出视频前读 `domains/jewelry/国内AI生成珠宝实操SOP.md` 对应章节；执行出片时直接读 `domains/jewelry/无模特版出片SOP.md`
 
 **路径 B · 续接**（用户说"继续/接着做 X"，仍是同一阶段同类活）：
 1. 只读本文件（AGENTS.md）扫规则
