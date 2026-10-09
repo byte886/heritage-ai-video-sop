@@ -8,6 +8,7 @@
 
 ## 2026-10-09
 
+- 2026-10-09 ［新增］Remotion「声音选项 + 数字人选项」本机验证通过并回填模板（`remotion-minimal-template` 新增 AnchorVideo 成片 + Avatar / audioEnergy 组件，package.json 加 @remotion/media-utils，render.sh 支持选片，README 与 public/ 补音频生成、数字人三路径说明）：TTS 配音 + BGM（波形 RMS 自动闪避）+ 程序化 SVG 数字人（RMS 驱动口型 / 眨眼 / 头部点动），11s 成片 1.2MB，抽帧确认口型随说话明显开合；写实数字人（OmniHuman / HeyGen / D-ID）与 3D（Ready Player Me + R3F）路径沉淀进《工具选型参考》3.12 与模板，暂不烧钱。
 - 2026-10-09 ［变更］仓库改名 `ai-video-studio → video-studio`（体系去 ai 前缀统一：AI 在体系内不言而喻，与 trend-radar / we-media-ops 命名一致；GitHub rename + 本地目录 + remote set-url + 全链指针同步）
 - 2026-10-09 ［新增］吸收老白AI拆解局《Remotion 代码生成视频》（视频ID 7686467402007072019）：文稿提炼入 `09_调研底稿与素材/20261009_单条视频分析/`；《工具选型参考》新增 3.12 Remotion（开源 React 确定性渲染，补齐"代码即视频"路线，数据可视化/信息图专用，与 AI 生成式互补）；《来源索引》A/D 节登记官方仓库与视频链接。
 - 2026-10-09 ［新增］Remotion 本机落地验证通过 + 最小模板归档（`09/20261009_单条视频分析/remotion-minimal-template/`，含 README 与 render.sh）：npmmirror 装包 12s、本机 Chrome 渲染、10s 柱状图数据可视化成片含打包 36s，抽帧校验动画/数字/镜头推进全部正确；文稿补"落地验证结果"。
